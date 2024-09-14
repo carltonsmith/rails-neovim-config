@@ -13,8 +13,13 @@ local run_test = function()
   vim.api.nvim_command(test_string)
 end
 
+local run_all_tests = function()
+  local test_string = "silent !zellij run -d Down -n 'testing' -- bin/rails test"
+  vim.api.nvim_command(test_string)
+end
+
 vim.api.nvim_create_user_command('RunTest', run_test, {})
+vim.api.nvim_create_user_command('RunAllTests', run_all_tests, {})
 
 vim.keymap.set("n", "<leader>t", ":RunTest<CR>", { desc = "run current file test" })
-
-vim.keymap.set("n", "<leader>a", ":!zellij run -d Down -n 'testing' -- bin/rails test<CR>", { desc = "run all tests" })
+vim.keymap.set("n", "<leader>a", ":RunAllTests<CR>", { desc = "run all tests" })

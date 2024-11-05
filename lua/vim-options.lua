@@ -51,6 +51,7 @@ vim.keymap.set("n", "<leader>n", nvimTreeFocusOrToggle)
 vim.keymap.set('n', '<Tab>', '<cmd>BufferLineCycleNext<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<S-Tab>', '<cmd>BufferLineCyclePrev<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>x', '<cmd>BufferLinePickClose<CR>:BufferLineCycleNext<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
 
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
@@ -59,7 +60,5 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
-
-
 
 vim.wo.number = true

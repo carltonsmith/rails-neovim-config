@@ -4,12 +4,12 @@ return {
  config = function()
    require('bufferline').setup {
      options = {
-       offsets = {
+       offsets = {{
          filetype = 'NvimTree',
          text = 'File Explorer',
          highlight = 'Directory',
          text_align = 'left',
-       },
+       }},
      },
    }
  end,
